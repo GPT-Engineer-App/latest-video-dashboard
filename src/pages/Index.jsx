@@ -11,6 +11,8 @@ const CHANNELS = [
   { id: "MrBeastGaming", name: "MrBeast Gaming" },
 ];
 
+const YOUTUBE_API_KEY = "YOUR_VALID_API_KEY_HERE";
+
 const Index = () => {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +21,7 @@ const Index = () => {
     const fetchVideos = async () => {
       const videoData = await Promise.all(
         CHANNELS.map(async (channel) => {
-          const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyBJhDMHiCgQQYfm5dWEcDuTSz0fdGIawPI&channelId=${channel.id}&part=snippet,id&order=date&maxResults=1`);
+          const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${channel.id}&part=snippet,id&order=date&maxResults=1`);
           const data = await res.json();
           return {
             id: data.items[0].id.videoId,
