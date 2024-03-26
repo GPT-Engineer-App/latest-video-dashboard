@@ -21,7 +21,7 @@ const Index = () => {
     const fetchVideos = async () => {
       const videoData = await Promise.all(
         CHANNELS.map(async (channel) => {
-          const res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${channel.id}&key=${YOUTUBE_API_KEY}`);
+          const res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet,id&channelId=${channel.id}&key=${YOUTUBE_API_KEY}`);
           const data = await res.json();
           return {
             id: data.items[0].id.videoId,
