@@ -11,7 +11,7 @@ const CHANNELS = [
   { id: "MrBeastGaming", name: "MrBeast Gaming" },
 ];
 
-const YOUTUBE_API_KEY = "YOUR_VALID_API_KEY_HERE";
+const YOUTUBE_API_KEY = "AIzaSyD2PK9jbo6J-3zKK4EFyT6NnHFFwurUKRw";
 
 const Index = () => {
   const [videos, setVideos] = useState([]);
